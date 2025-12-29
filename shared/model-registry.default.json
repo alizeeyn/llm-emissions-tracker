@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "models": [
+    {
+      "provider": "openai",
+      "model_id": "unknown",
+      "aliases": [],
+      "energy": {
+        "joules_per_token_input": 0.003,
+        "joules_per_token_output": 0.006,
+        "overhead_joules_per_request": 2.0
+      },
+      "sources": ["fallback-default"],
+      "effective_date": "2025-01-01"
+    }
+  ]
+}
