@@ -1,0 +1,14 @@
+{
+  "registry": {
+    "base_url": "https://alizeeyn.github.io/llm-emissions-registry/registry/v1/",
+    "manifest_path": "manifest.json",
+    "models_path": "models.json",
+    "update_period_hours": 168
+  },
+  "defaults": {
+    "pue": 1.2,
+    "grid_intensity_g_per_kwh": 475,
+    "currency": "gCO2e",
+    "retention_days": 365
+  }
+}
