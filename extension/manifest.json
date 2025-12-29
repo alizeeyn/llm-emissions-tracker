@@ -2,11 +2,38 @@
   "manifest_version": 3,
   "name": "LLM Emissions Tracker",
   "version": "0.1.0",
+  "description": "Privacy-first, token-based CO2e estimates for LLM usage (web adapters + optional proxy).",
   "permissions": ["storage", "alarms"],
   "host_permissions": [
     "https://chatgpt.com/*",
     "https://gemini.google.com/*",
     "https://claude.ai/*",
     "https://alizeeyn.github.io/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "LLM Emissions Tracker",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content-scripts/chatgpt.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content-scripts/gemini.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content-scripts/claude.js"],
+      "run_at": "document_idle"
+    }
   ]
 }
